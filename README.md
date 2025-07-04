@@ -47,23 +47,23 @@ If you want to go through all the *painful* steps of creating a new DetectNet mo
 2. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
 3. Clone dusty_nv repository for Jetson-Inference:
 
-  a. git clone --recursive https://github.com/dusty-nv/jetson-inference
+  3a. git clone --recursive https://github.com/dusty-nv/jetson-inference
   
-  b. cd jetson-inference
+  3b. cd jetson-inference
   
-  c. mkdir build
+  3c. mkdir build
   
-  d. cd build
+  3d. cd build
   
-  e. cmake ../
+  3e. cmake ../
   
-  f. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
+  3f. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
   
-  g. make -j$(nproc)
+  3g. make -j$(nproc)
   
-  h. sudo make install
+  3h. sudo make install
   
-  i. sudo ldconfig
+  3i. sudo ldconfig
   
 4. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
 
@@ -99,6 +99,7 @@ Run the following commands:
 You are ready for live recognition! Run the following:
 
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 webrtc://@:8554/output
+
 ^ /dev/video0 is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change /dev/video0 to your supported camera. (see [here](url))
 WebRTC may take a bit to initialize and load on the first couple tries. Keep trying and it will eventually pop up.
 
@@ -107,7 +108,8 @@ READ IT ALL [HERE](url)!
 
 Example:
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 theoutputtedvideo.mp4
-This code records and detects, and outputs as a .mp4 file.
+
+^ This code records and detects, and outputs as a .mp4 file.
 
 **To end the livestream or video, go to the console and press Ctrl + C.**
 

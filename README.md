@@ -53,7 +53,9 @@ Internet connection is necessary to download everything, but running the model *
 
 ## Running This Project
 
-If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, look here: https://docs.google.com/document/d/1i4WsFui5fuGUALkeWdmcqqGaycF6AALmTyXp1bikalQ/edit?usp=sharing.
+If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, look at this doc: https://docs.google.com/document/d/1i4WsFui5fuGUALkeWdmcqqGaycF6AALmTyXp1bikalQ/edit?usp=sharing.
+
+Normal Setup:
 
 1. Go into Terminal.
 2. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git

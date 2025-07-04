@@ -1,4 +1,4 @@
-# Project Name
+# Final Nvidia Project: Weapon Detector using DetectNet
 
 **This is the final Nvidia Project for iDTech's AI and Machine Learning Academy with NVIDIA!**
 This project identifies dangerous objects, such as guns, bombs, and knives, and boxes them on a live camera feed in your browser.
@@ -60,16 +60,16 @@ If you want to go through all the *painful* steps of creating a new DetectNet mo
 
 ## Displaying, Inputting, and Outputting
 
-*The basic command:*
+### *The basic command:*
 
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes [input here] [output here]
 
-*For videos, put the path to your video.*
+### *For videos, put the path to your video.*
 
 Example:
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes ~/Downloads/thevideoisubmitted.mp4 theoutputtedvideo.mp4
 
-*For live recognition, it becomes a bit more complicated:*
+### *For live recognition, it becomes a bit more complicated:*
 
 For the more in depth tutorial, see dusty_nv's documentation [here](url).
 
@@ -94,7 +94,7 @@ detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input
 ^ /dev/video0 is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change /dev/video0 to your supported camera. (see [here](url))
 WebRTC may take a bit to initialize and load on the first couple tries. Keep trying and it will eventually pop up.
 
-*You can even mix live recognition with plain videos!*
+### *You can even mix live recognition with plain videos!*
 READ IT ALL [HERE](url)!
 
 Example:

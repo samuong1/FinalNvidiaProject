@@ -121,6 +121,6 @@ detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input
 
 ^ This code records and detects, and outputs as a .mp4 file.
 
-### **To end the livestream or video, go to the console and press Ctrl + C.**
+### **To end the livestream or video, go to the console and press Ctrl + C. Happy detecting!**
 
 [View a video explanation here](video link) VIDEO WILL GO HERE LATER, THIS IS A WIP GIVE ME A BREAK PLEASE D:

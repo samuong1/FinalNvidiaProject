@@ -18,9 +18,9 @@ extract specific details and features of the objects, which allows it to detect 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
 pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running This Project" below.
 
-A Video Demonstration is available (due to GitHub restrictions, this is only viewable in Google Drive. Sorry!):
+A video demonstration is available:
 
-https://drive.google.com/file/d/12QaAykH3poJYTBIYPsoDCow6sl4FrkIk/view?usp=sharing
+https://github.com/user-attachments/assets/cc364ba3-1ed2-4564-b8a7-f67a75d2e61f
 
 ^ This video is silent.
 

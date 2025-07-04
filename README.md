@@ -20,24 +20,29 @@ pulled from [Open Images Dataset v7](url). If you want to retrain the model, see
 
 ## Requirements to Run
 
-**This model was built and tested on the Jetson Orin Nano (*Version 36, using Jetpack v6*)!** Compatibility with other devices and machines have not been tested!
+### **This model was built and tested on the Jetson Orin Nano (*Version 36, using Jetpack v6*)!** 
+
+Compatibility with other devices and machines have not been tested!
+
 ^(It might run fine on other machines, but **you have been warned!**)
 
-**A Webcam is required to stream video.** The supported cameras are below (straight from the [Jetson-Inference repo](url)):
+### **A Webcam is required to stream video.** 
+The supported cameras are below (straight from the [Jetson-Inference repo](url)):
 - MIPI CSI cameras (csi://0)
 - V4L2 cameras (/dev/video0)
 - RTP/RTSP streams (rtsp://username:password@ip:port)
 - WebRTC streams (webrtc://@:port/stream_name)
 
-**If you are running headless, you will need a way to connect to your Nano.** In my case, I simply connected my Nano to a monitor, connected my Nano to my laptop 
+### **If you are running headless, you will need a way to connect to your Nano.** 
+In my case, I simply connected my Nano to a monitor, connected my Nano to my laptop 
 via the mobile hotspot feature in Windows 10/11 (and recorded the IP of the Nano), then secure shelled (SSH) into my Nano via Visual Studio Code. There is probably
 a better way to do this, but this way is fairly beginner friendly.
 
-**For software, I recommend VSC (Visual Studio Code).** It is possible (and possibly easier) to code on the Nano, but Visual Studio Code will help keep you focused
-in the long run.
+### **For software, I recommend VSC (Visual Studio Code).** 
+It is possible (and possibly easier) to code on the Nano, but Visual Studio Code will (probably) help keep you focused in the long run.
 
-**You will need to import repositories and containers for this project!** Internet connection is necessary to download everything, but running the model *does not*
-require internet.
+### **You will need to import repositories and containers for this project!** 
+Internet connection is necessary to download everything, but running the model *does not*require internet.
 
 ## Running this project
 
@@ -102,6 +107,6 @@ detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input
 
 ^ This code records and detects, and outputs as a .mp4 file.
 
-**To end the livestream or video, go to the console and press Ctrl + C.**
+### **To end the livestream or video, go to the console and press Ctrl + C.**
 
 [View a video explanation here](video link) VIDEO WILL GO HERE LATER, THIS IS A WIP GIVE ME A BREAK PLEASE D:

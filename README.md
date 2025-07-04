@@ -45,20 +45,20 @@ If you want to go through all the *painful* steps of creating a new DetectNet mo
 
 1. Go into Terminal.
 2. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
-3. Clone dusty_nv repository for Jetson-Inference:
-    a. git clone --recursive https://github.com/dusty-nv/jetson-inference
-    b. cd jetson-inference
-    c. mkdir build
-    3d. cd build
-    3e. cmake ../
-    3f. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
-    3g. make -j$(nproc)
-    3h. sudo make install
-    3i. sudo ldconfig
-  
-5. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
+3. Clone dusty_nv repository for Jetson-Inference: git clone --recursive https://github.com/dusty-nv/jetson-inference
+4. Change Directories to Jetson-Inference: cd jetson-inference
+5. Make a new folder: mkdir build
+6. Change Directories to that new build: cd build
+7. Make a new build: cmake ../
+8. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
+9. Compile it all: make -j$(nproc)
+10. Install the compiled executables: sudo make install
+11. Let the system know where everything is: sudo ldconfig
+12. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
 
 **From here, you have the freedom to decide what your inputs and outputs are.**
+
+## Displaying, Inputting, and Outputting
 
 *The basic command:*
 

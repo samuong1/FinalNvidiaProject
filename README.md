@@ -5,8 +5,8 @@ This project identifies dangerous objects, such as guns, bombs, and knives, and 
 The repository contains the engine file and its dependancies. It does NOT contain training data or software (see "Running This Project" below).
 This was built on a *Jetson Orin Nano*. You will also need a *webcam*.
 
-![Image of DetectNet in Action](![dangerous7](https://github.com/user-attachments/assets/f3452f88-369b-469c-bb82-f6bd2aab9ca3)
-) IMAGE WILL GO HERE LATER, THIS IS A WIP GIVE ME A BREAK PLEASE D:
+![dangerous7](https://github.com/user-attachments/assets/09e2425c-cd5f-44c1-b87e-cbb88aa1f91d)
+
 
 ## The Algorithm
 

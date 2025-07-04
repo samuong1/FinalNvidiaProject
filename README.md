@@ -96,7 +96,7 @@ You are ready for live recognition! Run the following:
 
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 webrtc://@:8554/output
 
-^ /dev/video0 is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change /dev/video0 to your supported camera (see [here](url)).
+^ /dev/video0 is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change /dev/video0 to your supported camera (see: https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md).
 WebRTC may take a bit to initialize and load on the first couple tries. Keep trying and it will eventually pop up.
 
 ### *You can even mix live recognition with plain videos!*

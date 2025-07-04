@@ -16,7 +16,7 @@ by being trained on datasets where the desired objects are marked with bounding 
 extract specific details and features of the objects, which allows it to detect desired objects in new images.
 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
-pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running this project" below.
+pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running This Project" below.
 
 ## Requirements to Run
 

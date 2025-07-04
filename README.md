@@ -19,6 +19,12 @@ extract specific details and features of the objects, which allows it to detect 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
 pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running This Project" below.
 
+## Limitations
+
+**This program is NOT perfect!** This model was running for 480 epochs, with a training dataset of ~700 images (which took ~18 hours to train). Despite this, it may
+not correctly classify objects, or fail to identify objects at all. In order to get better results,  you will need to retrain this model. See "Running This Project"
+for more information.
+
 ## Requirements to Run
 
 ### **This model was built and tested on the Jetson Orin Nano (*Version 36, using Jetpack v6*)!** 
@@ -45,7 +51,7 @@ It is possible (and possibly easier) to code on the Nano, but Visual Studio Code
 ### **You will need to import repositories and containers for this project!** 
 Internet connection is necessary to download everything, but running the model *does not*require internet.
 
-## Running this project
+## Running This Project
 
 If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, look here: https://docs.google.com/document/d/1i4WsFui5fuGUALkeWdmcqqGaycF6AALmTyXp1bikalQ/edit?usp=sharing.
 

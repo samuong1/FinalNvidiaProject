@@ -9,7 +9,7 @@ This was built on a *Jetson Orin Nano*. You will also need a *webcam*.
 
 ## The Algorithm
 
-For the very long and detailed explanation, please see dusty_nv's [jetson-inference repository](url). The DetectNet part is [here](url).
+For the very long and detailed explanation, please see dusty_nv's [jetson-inference repository]([url](https://github.com/dusty-nv/jetson-inference/tree/master)). The DetectNet part is [here](url).
 
 DetectNet is a deep learning model designed for object detection. It learns to identify objects within given images/video
 by being trained on datasets where the desired objects are marked with bounding boxes. DetectNet learns to

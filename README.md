@@ -46,15 +46,25 @@ If you want to go through all the *painful* steps of creating a new DetectNet mo
 1. Go into Terminal.
 2. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
 3. Clone dusty_nv repository for Jetson-Inference:
+
   a. git clone --recursive https://github.com/dusty-nv/jetson-inference
+  
   b. cd jetson-inference
+  
   c. mkdir build
+  
   d. cd build
+  
   e. cmake ../
+  
   f. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
+  
   g. make -j$(nproc)
+  
   h. sudo make install
+  
   i. sudo ldconfig
+  
 4. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
 
 **From here, you have the freedom to decide what your inputs and outputs are.**
@@ -81,7 +91,9 @@ Run the following commands:
 - export SSL_CERT=~/cert.pem
 
     ^ Note that if you are planning on retraining the model, or training a new model, you should keep the key and certificate in ~/jetson-inference/data. See documentation 			above for reasons.
-    ^ Alternate Key location for retraining: export SSL_KEY=~/jetson-inference/data/key.pem 
+  
+    ^ Alternate Key location for retraining: export SSL_KEY=~/jetson-inference/data/key.pem
+  
     ^ Alternate Certificate location for retraining: export SSL_CERT=~/jetson-inference/data/cert.pem
 
 You are ready for live recognition! Run the following:

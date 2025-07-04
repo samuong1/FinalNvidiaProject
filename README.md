@@ -18,7 +18,7 @@ extract specific details and features of the objects, which allows it to detect 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
 pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running This Project" below.
 
-### A video demonstration is available:
+### A video demonstration of the model is available:
 
 https://github.com/user-attachments/assets/cc364ba3-1ed2-4564-b8a7-f67a75d2e61f
 
@@ -26,7 +26,7 @@ https://github.com/user-attachments/assets/cc364ba3-1ed2-4564-b8a7-f67a75d2e61f
 
 ## Limitations
 
-**This program is NOT perfect!** This model was running for 480 epochs, with a training dataset of ~700 images (which took ~18 hours to train). Despite this, it may
+**This model is NOT perfect!** This model was running for 480 epochs, with a training dataset of ~700 images (which took ~18 hours to train). Despite this, it may
 not correctly classify objects, or fail to identify objects at all. In order to get better results,  you will need to retrain this model. See "Running This Project"
 for more information.
 

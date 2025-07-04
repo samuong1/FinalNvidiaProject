@@ -2,7 +2,7 @@
 
 **This is the final Nvidia Project for iDTech's AI and Machine Learning Academy with NVIDIA!**
 This project identifies dangerous objects, such as guns, bombs, and knives, and boxes them on a live camera feed in your browser.
-The repository contains the engine file and its dependancies. It does NOT contain training data or software (see "Running this project" below).
+The repository contains the engine file and its dependancies. It does NOT contain training data or software (see "Running This Project" below).
 This was built on a *Jetson Orin Nano*. You will also need a *webcam*.
 
 ![add image descrition here](direct image link here) IMAGE WILL GO HERE LATER, THIS IS A WIP GIVE ME A BREAK PLEASE D:

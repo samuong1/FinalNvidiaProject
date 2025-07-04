@@ -7,7 +7,6 @@ This was built on a *Jetson Orin Nano*. You will also need a *webcam*.
 
 ![dangerous7](https://github.com/user-attachments/assets/09e2425c-cd5f-44c1-b87e-cbb88aa1f91d)
 
-
 ## The Algorithm
 
 For the very long and detailed explanation, please see dusty_nv's jetson inference repository: https://github.com/dusty-nv/jetson-inference/tree/master.
@@ -18,6 +17,12 @@ extract specific details and features of the objects, which allows it to detect 
 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
 pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running This Project" below.
+
+A Video Demonstration is available (due to GitHub restrictions, this is only viewable in Google Drive. Sorry!):
+
+https://drive.google.com/file/d/12QaAykH3poJYTBIYPsoDCow6sl4FrkIk/view?usp=sharing
+
+^ This video is silent.
 
 ## Limitations
 
@@ -122,5 +127,3 @@ detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input
 ^ This code records and detects, and outputs as a .mp4 file.
 
 ### **To end the livestream or video, go to the console and press Ctrl + C. Happy detecting!**
-
-[View a video explanation here](video link) VIDEO WILL GO HERE LATER, THIS IS A WIP GIVE ME A BREAK PLEASE D:

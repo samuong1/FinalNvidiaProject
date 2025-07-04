@@ -54,7 +54,7 @@ a better way to do this, but this way is fairly beginner friendly.
 It is possible (and possibly easier) to code on the Nano, but Visual Studio Code will (probably) help keep you focused in the long run.
 
 ### **You will need to import repositories and containers for this project!** 
-Internet connection is necessary to download everything, but running the model *does not*require internet.
+Internet connection is necessary to download everything and SSH into the Nano (Windows Mobile Hotspot requires WiFi/Internet Connection).
 
 ## Running This Project
 
@@ -62,18 +62,21 @@ If you want to go through all the *painful* steps of creating a new DetectNet mo
 
 Normal Setup:
 
-1. Go into Terminal.
-2. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
-3. Clone dusty_nv repository for Jetson-Inference: git clone --recursive https://github.com/dusty-nv/jetson-inference
-4. Change Directories to Jetson-Inference: cd jetson-inference
-5. Make a new folder: mkdir build
-6. Change Directories to that new build: cd build
-7. Make a new build: cmake ../
-8. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
-9. Compile it all: make -j$(nproc)
-10. Install the compiled executables: sudo make install
-11. Let the system know where everything is: sudo ldconfig
-12. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
+1. Download VSC onto your computer.
+2. You will need to connect your Nano to your computer's hotspot. Record the IP of the Nano.
+3. SSH into your Nano using the IP you just recorded.
+4. Go into the Terminal.
+5. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
+6. Clone dusty_nv repository for Jetson-Inference: git clone --recursive https://github.com/dusty-nv/jetson-inference
+7. Change Directories to Jetson-Inference: cd jetson-inference
+8. Make a new folder: mkdir build
+9. Change Directories to that new build: cd build
+10. Make a new build: cmake ../
+11. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
+12. Compile it all: make -j$(nproc)
+13. Install the compiled executables: sudo make install
+14. Let the system know where everything is: sudo ldconfig
+15. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
 
 **From here, you have the freedom to decide what your inputs and outputs are.**
 

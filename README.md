@@ -9,14 +9,14 @@ This was built on a *Jetson Orin Nano*. You will also need a *webcam*.
 
 ## The Algorithm
 
-For the very long and detailed explanation, please see dusty_nv's [jetson-inference repository]([https://github.com/dusty-nv/jetson-inference/tree/master]). The DetectNet part is [here](url).
+For the very long and detailed explanation, please see dusty_nv's jetson inference repository: https://github.com/dusty-nv/jetson-inference/tree/master.
 
 DetectNet is a deep learning model designed for object detection. It learns to identify objects within given images/video
 by being trained on datasets where the desired objects are marked with bounding boxes. DetectNet learns to
 extract specific details and features of the objects, which allows it to detect desired objects in new images.
 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
-pulled from [Open Images Dataset v7](url). If you want to retrain the model, see "Running this project" below.
+pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running this project" below.
 
 ## Requirements to Run
 
@@ -27,7 +27,7 @@ Compatibility with other devices and machines have not been tested!
 ^(It might run fine on other machines, but **you have been warned!**)
 
 ### **A Webcam is required to stream video.** 
-The supported cameras are below (straight from the [Jetson-Inference repo](url)):
+The supported cameras are below:
 - MIPI CSI cameras (csi://0)
 - V4L2 cameras (/dev/video0)
 - RTP/RTSP streams (rtsp://username:password@ip:port)
@@ -46,7 +46,7 @@ Internet connection is necessary to download everything, but running the model *
 
 ## Running this project
 
-If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, click [here](url).
+If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, look here: https://docs.google.com/document/d/1i4WsFui5fuGUALkeWdmcqqGaycF6AALmTyXp1bikalQ/edit?usp=sharing.
 
 1. Go into Terminal.
 2. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
@@ -76,7 +76,7 @@ detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input
 
 ### *For live recognition, it becomes a bit more complicated:*
 
-For the more in depth tutorial, see dusty_nv's documentation [here](url).
+For the more in depth tutorial, see dusty_nv's documentation (or the more complicated Google Doc in "Running This Project".
 
 You will need to use HTTPS and SSL/TLS for livestreams. You will therefore need an SSL_KEY (key) and a SSL_CERT (certificate) to run HTTPS.
 
@@ -100,7 +100,6 @@ detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input
 WebRTC may take a bit to initialize and load on the first couple tries. Keep trying and it will eventually pop up.
 
 ### *You can even mix live recognition with plain videos!*
-READ IT ALL [HERE](url)!
 
 Example:
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 theoutputtedvideo.mp4

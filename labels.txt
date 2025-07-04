@@ -1,0 +1,6 @@
+BACKGROUND
+Bomb
+Handgun
+Knife
+Rifle
+Shotgun

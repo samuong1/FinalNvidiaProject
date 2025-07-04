@@ -99,12 +99,18 @@ Run the following commands:
   
     ^ Alternate Certificate location for retraining: export SSL_CERT=~/jetson-inference/data/cert.pem
 
-You are ready for live recognition! Run the following:
+You are ready for live recognition! WebRTC uses port 8554 by default. Run the following:
 
 detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 webrtc://@:8554/output
 
+and go to:
+
+http://localhost:8554/ OR http://[jetson-nano-ip]:8554
+
 ^ /dev/video0 is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change /dev/video0 to your supported camera (see: https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md).
 WebRTC may take a bit to initialize and load on the first couple tries. Keep trying and it will eventually pop up.
+
+^ If you want to use a different port, change the number 8554 in the command and weburl to your desired port.
 
 ### *You can even mix live recognition with plain videos!*
 

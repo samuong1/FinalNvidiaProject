@@ -1,3 +1,5 @@
+<img width="2560" height="1440" alt="Weapon Detection Banner" src="https://github.com/user-attachments/assets/0a2d9db3-57d4-487d-b0ed-4e772a617302" />
+
 # Final Nvidia Project: Weapon Detector using DetectNet
 
 **This is the final Nvidia Project for iDTech's AI and Machine Learning Academy with NVIDIA!**
@@ -9,14 +11,14 @@ This was built on a *Jetson Orin Nano*. You will also need a *webcam*.
 
 ## The Algorithm
 
-For the very long and detailed explanation, please see dusty_nv's jetson inference repository: https://github.com/dusty-nv/jetson-inference/tree/master.
+For the very long and detailed explanation, please see [dusty_nv's Jetson Inference repository](https://github.com/dusty-nv/jetson-inference/tree/master).
 
 DetectNet is a deep learning model designed for object detection. It learns to identify objects within given images/video
 by being trained on datasets where the desired objects are marked with bounding boxes. DetectNet learns to
 extract specific details and features of the objects, which allows it to detect desired objects in new images.
 
 In this case, DetectNet is trained on five object classes: "bomb", "handgun", "knife", "rifle", and "shotgun". All images were
-pulled from Open Images Dataset: https://storage.googleapis.com/openimages/web/index.html. If you want to retrain the model, see "Running This Project" below.
+pulled from [Open Images Dataset](https://storage.googleapis.com/openimages/web/index.html). If you want to retrain the model, see "Running This Project" below.
 
 ### A video demonstration of the model is available:
 
@@ -40,10 +42,10 @@ Compatibility with other devices and machines have not been tested!
 
 ### **A Webcam is required to stream video.** 
 The supported cameras are below:
-- MIPI CSI cameras (csi://0)
-- V4L2 cameras (/dev/video0)
-- RTP/RTSP streams (rtsp://username:password@ip:port)
-- WebRTC streams (webrtc://@:port/stream_name)
+- MIPI CSI cameras (`csi://0`)
+- V4L2 cameras (`/dev/video0`)
+- RTP/RTSP streams (`rtsp://username:password@ip:port`) (example: `rtsp://nvidia:nvidia@192.168.0.1:8554`)
+- WebRTC streams (`webrtc://@:port/stream_name`) (example: `webrtc://@:8554/output`)
 
 ### **If you are running headless, you will need a way to connect to your Nano.** 
 In my case, I simply connected my Nano to a monitor, connected my Nano to my laptop 
@@ -58,7 +60,7 @@ Internet connection is necessary to download everything and SSH into the Nano (W
 
 ## Running This Project
 
-If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, look at this doc: https://docs.google.com/document/d/1i4WsFui5fuGUALkeWdmcqqGaycF6AALmTyXp1bikalQ/edit?usp=sharing.
+If you want to go through all the *painful* steps of creating a new DetectNet model from scratch, using your own dataset, look at [this doc](https://docs.google.com/document/d/1i4WsFui5fuGUALkeWdmcqqGaycF6AALmTyXp1bikalQ/edit?usp=sharing).
 
 Normal Setup:
 
@@ -66,17 +68,17 @@ Normal Setup:
 2. You will need to connect your Nano to your computer's hotspot. Record the IP of the Nano.
 3. SSH into your Nano using the IP you just recorded.
 4. Go into the Terminal.
-5. Clone this repository: git clone https://github.com/samuong1/FinalNvidiaProject.git
-6. Clone dusty_nv repository for Jetson-Inference: git clone --recursive https://github.com/dusty-nv/jetson-inference
-7. Change Directories to Jetson-Inference: cd jetson-inference
-8. Make a new folder: mkdir build
-9. Change Directories to that new build: cd build
-10. Make a new build: cmake ../
+5. Clone this repository: `git clone https://github.com/samuong1/FinalNvidiaProject.git`
+6. Clone dusty_nv repository for Jetson-Inference: `git clone --recursive https://github.com/dusty-nv/jetson-inference`
+7. Change Directories to Jetson-Inference: `cd jetson-inference`
+8. Make a new folder: `mkdir build`
+9. Change Directories to that new build: `cd build`
+10. Make a new build: `cmake ../`
 11. After a couple minutes, a popup for PyTorch will appear. Select the PyTorch option with Space, then use the arrow keys to hover over Ok. Press the space bar to continue.
-12. Compile it all: make -j$(nproc)
-13. Install the compiled executables: sudo make install
-14. Let the system know where everything is: sudo ldconfig
-15. Set the NET variable to the path of the model folder: NET=~/FinalNvidiaProject
+12. Compile it all: `make -j$(nproc)`
+13. Install the compiled executables: `sudo make install`
+14. Let the system know where everything is: `sudo ldconfig`
+15. Set the NET variable to the path of the model folder: `NET=~/FinalNvidiaProject`
 
 **From here, you have the freedom to decide what your inputs and outputs are.**
 
@@ -84,12 +86,12 @@ Normal Setup:
 
 ### *The basic command:*
 
-detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes [input here] [output here]
+`detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes [input here] [output here]`
 
 ### *For videos, put the path to your video.*
 
 Example:
-detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes ~/Downloads/thevideoisubmitted.mp4 theoutputtedvideo.mp4
+`detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes ~/Downloads/thevideoisubmitted.mp4 theoutputtedvideo.mp4`
 
 ### *For live recognition, it becomes a bit more complicated:*
 
@@ -98,26 +100,30 @@ For the more in depth tutorial, see dusty_nv's documentation (or the more compli
 You will need to use HTTPS and SSL/TLS for livestreams. You will therefore need an SSL_KEY (key) and a SSL_CERT (certificate) to run HTTPS.
 
 Run the following commands:
-- cd /jetson-inference/data
-- openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365 -nodes -subj '/CN=localhost'
-- export SSL_KEY=~/key.pem
-- export SSL_CERT=~/cert.pem
 
-    ^ Note that if you are planning on retraining the model, or training a new model, you should keep the key and certificate in ~/jetson-inference/data. See documentation 			above for reasons.
+`cd /jetson-inference/data`
+
+`openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365 -nodes -subj '/CN=localhost'`
+
+`export SSL_KEY=~/key.pem`
+
+`export SSL_CERT=~/cert.pem`
+
+^ Note that if you are planning on retraining the model, or training a new model, you should keep the key and certificate in ~/jetson-inference/data. See documentation 			above for reasons.
   
-    ^ Alternate Key location for retraining: export SSL_KEY=~/jetson-inference/data/key.pem
+^ Alternate Key location for retraining: `export SSL_KEY=~/jetson-inference/data/key.pem`
   
-    ^ Alternate Certificate location for retraining: export SSL_CERT=~/jetson-inference/data/cert.pem
+^ Alternate Certificate location for retraining: `export SSL_CERT=~/jetson-inference/data/cert.pem`
 
 You are ready for live recognition! WebRTC uses port 8554 by default. Run the following:
 
-detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 webrtc://@:8554/output
+`detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 webrtc://@:8554/output`
 
 and go to:
 
-http://localhost:8554/ OR http://[jetson-nano-ip]:8554
+`http://localhost:8554/` OR `http://[jetson-nano-ip]:8554`
 
-^ /dev/video0 is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change /dev/video0 to your supported camera (see: https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md).
+^ `/dev/video0` is for V4L2 cameras, such as the Logitech C270 camera. If you have a different camera, change `/dev/video0` to your supported camera ([see here](https://github.com/dusty-nv/jetson-inference/blob/master/docs/aux-streaming.md)).
 WebRTC may take a bit to initialize and load on the first couple tries. Keep trying and it will eventually pop up.
 
 ^ If you want to use a different port, change the number 8554 in the command and weburl to your desired port.
@@ -125,8 +131,10 @@ WebRTC may take a bit to initialize and load on the first couple tries. Keep try
 ### *You can even mix live recognition with plain videos!*
 
 Example:
-detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 theoutputtedvideo.mp4
+`detectnet   --model=$NET/ssd-mobilenet.onnx   --labels=$NET/labels.txt   --input-blob=input_0   --output-cvg=scores   --output-bbox=boxes /dev/video0 theoutputtedvideo.mp4`
 
 ^ This code records and detects, and outputs as a .mp4 file.
 
-### **To end the livestream or video, go to the console and press Ctrl + C. Happy detecting!**
+### To end the livestream or video, go to the console and press Ctrl + C.
+
+### Happy detecting!
